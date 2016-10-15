@@ -1,4 +1,4 @@
 <div id='container'>
   <!-- Your html here -->
-  you are on the links page
+  <div ng-repeat="link in data.links track by $index">{{link | json}}</div>
 </div>

@@ -23,12 +23,10 @@ angular.module('shortly', [
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController',
-      authenticate: true  
+      authenticate: true
     })
     .otherwise({
-      templateUrl: 'app/links/links.html',
-      controller: 'LinksController',
-      authenticate: true
+      redirectTo: '/links'
     });
 
     // We add our $httpInterceptor into the array
