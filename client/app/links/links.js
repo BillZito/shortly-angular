@@ -12,6 +12,10 @@ angular.module('shortly.links', [])
       });
   };
 
+  $scope.clickLink = function(index) {
+    $scope.data.links[index].visits++;
+  };
+
   $scope.getAll();
 
 });

@@ -1,4 +1,12 @@
 <div id='container'>
   <!-- Your html here -->
-  <div ng-repeat="link in data.links track by $index">{{link | json}}</div>
+  <input = ng-model="search">
+  <div ng-repeat="link in data.links | orderBy: '-visits' | filter:search">
+    <a href="{{link.baseUrl + '/' + link.code}}" target="_blank">
+      <span class="title">{{link.title}}</span>
+      <span class="url">{{link.url}}</span>
+      <span class="shortUrl">{{link.baseUrl + "/" + link.code}}</span>
+      <span class="visits">{{"Visits: " + link.visits}}</span>
+    </a>
+  </div>
 </div>
